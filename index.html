@@ -68,10 +68,8 @@
 										<span class="date">March 06, 2026</span>
 										<h2><a href="#">OpTIREmus Prime</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic01.jpeg" alt="" /></a>
-									<p>Designed chassis and steering for an autonomous robot powered <br />
-									by a pneumatic piston to cross through an obstacle course alongside<br />
-									other similar robots under a 3 minute time limit.</p>
+									<a href="#" class="image fit"><img src="images/pic02.jpeg" alt="" /></a>
+									<p>Designed chassis and steering for an autonomous robot powered by a pneumatic piston to cross through an obstacle course alongside other similar robots under a 3 minute time limit.</p>
 									<!-- <ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul> -->
@@ -112,31 +110,24 @@
 								</article>
 
 								<!-- Hidden Projects -->
-								<div id="more-projects" style="display:none;">
+								<article class="more-projects" style="display:none;">
+									<header>
+										<span class="date">August 21, 2025</span>
+										<h2><a href="#">Aquarium Lid Suspender</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic06.jpeg" alt="" /></a>
+									<p>Got some aquarium plants which needed the lid to be suspended so I made these.</p>
+								</article>
 								
-									<article>		<!-- 5 -->
-										<header>
-											<span class="date">August 21, 2025</span>
-											<h2><a href="#">Aquarium Lid Suspender</a></h2>
-										</header>
-										<a href="#" class="image fit"><img src="images/pic06.jpeg" alt="" /></a>
-										<p>Got some aquarium plants which needed the lid to be suspended so I made these.</p>
-										<!--<ul class="actions special">
-											<li><a href="#" class="button">Full Story</a></li>
-										</ul> -->
-									</article>								
-									<article>		<!-- 6 -->
-										<header>
-											<span class="date">July 27, 2025</span>
-											<h2><a href="#">Watch with OLED and Raspberry Pi Pico2w</a></h2>
-										</header>
-										<a href="#" class="image fit"><img src="images/pic07.jpeg" alt="" /></a>
-										<p>For 2025 UCLA HaCK, in a team of 4, I was in charge of designing a compact device that could display data from the other devices (light, temp, distance) and could switch into a "watch mode".</p>
-										<!-- <ul class="actions special">
-											<li><a href="#" class="button">Full Story</a></li>
-										</ul> -->
-									</article>
-								</div>
+								<article class="more-projects" style="display:none;">
+									<header>
+										<span class="date">July 27, 2025</span>
+										<h2><a href="#">Watch with OLED and Raspberry Pi Pico2w</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic07.jpeg" alt="" /></a>
+									<p>For 2025 UCLA HaCK, in a team of 4, I was in charge of designing a compact device that could display data from the other devices (light, temp, distance) and could switch into a "watch mode".</p>
+								</article>
+								
 								<ul class="actions special">
 									<li>
 										<button onclick="toggleProjects()" id="toggleButton" class="button">
@@ -159,7 +150,7 @@
 				<!-- Copyright -->
 					<div id="copyright">
 						<ul>
-							<li>&copy; 2026 Pearl Wang</li>
+							<li>&copy; Updated March 2026 Pearl Wang</li>
 						</ul>
 					</div>
 
@@ -175,22 +166,22 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				function toggleProjects() {
-					var projects = document.getElementById("more-projects");
+					var projects = document.querySelectorAll(".more-projects");
 					var button = document.getElementById("toggleButton");
+					var hidden = projects[0].style.display === "none";
 					
-					if (projects.style.display === "none") {
-						projects.style.display = "block";
-						button.textContent = "Show Less Projects";
-					} else {
-						projects.style.display = "none";
-						button.textContent = "Show More Projects";
-					}
+					projects.forEach(p => {
+						p.style.display = hidden ? "block" : "none";
+					});
+
+					button.textContent = hidden ? "Show Less Projects" : "Show More Projects";
 				}
 			</script>
 
 	</body>
 
 </html>
+
 
 
 
